@@ -75,4 +75,34 @@ class User_model extends CI_Model
             ->where('email', $email)
             ->update('user');
     }
+
+    public function check_current_password($data)
+    {
+        $current_password = $this->input->post('current_password', true);
+        $old_password = $data['user']['password'];
+
+        return password_verify($current_password, $old_password);
+    }
+
+    public function check_password_same($data)
+    {
+        $new_password = $this->input->post('new_password', true);
+        $current_password = $this->input->post('current_password', true);    
+
+        if ($new_password == $current_password) :
+            return true;
+        else :
+            return false;
+        endif;
+    }
+
+    public function insert_new_password()
+    {
+        $new_password = $this->input->post('new_password', true);
+        $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+
+        return $this->db->set('password', $password_hash)
+                 ->where('email', $this->session->userdata('email'))
+                 ->update('user');
+    }
 }
