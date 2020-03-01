@@ -31,11 +31,11 @@
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-sm-3">
-										<img src="<?=base_url('assets/img/profile/') . $user['image']?>" class="img-thumbnail">
+										<img src="<?=base_url('assets/img/profile/') . $user['image']?>" class="img-thumbnail" id="img-thumbnail">
 									</div>
 									<div class="col-sm-9">
 										<div class="custom-file">
-											<input type="file" class="custom-file-input" id="image" name="image">
+											<input type="file" class="custom-file-input" id="image-upload" name="image">
 											<label class="custom-file-label" for="image">Choose file</label>
 										</div>
 									</div>

@@ -21,13 +21,13 @@ class Menu extends CI_Controller
         
         $this->form_validation->set_rules('menu', 'Menu', 'required');
 
-        if($this->form_validation->run() == FALSE)
+        if ($this->form_validation->run() == FALSE)
         {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar');
             $this->load->view('templates/topbar');
             $this->load->view('menu/index');
-            $this->load->view('templates/footer');
+            $this->load->view('templates/footer'); 
         }
         else
         {

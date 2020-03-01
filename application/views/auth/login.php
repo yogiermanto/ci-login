@@ -15,7 +15,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">Login Page</h1>
                                 </div>
                                 <?php if($this->session->flashdata('success')) : ?>
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <div class="alert alert-success alert-dismissible fade show animation-fade" role="alert">
                                         <?=$this->session->flashdata('success')?>
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
